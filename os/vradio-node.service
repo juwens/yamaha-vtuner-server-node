@@ -1,0 +1,24 @@
+[Unit]
+Description=vRadio Node Service
+Documentation=
+
+Wants=network.target
+After=network.target
+
+[Service]
+User=pi
+Group=pi
+Nice=5
+KillMode=control-group
+SuccessExitStatus=0 1
+
+WorkingDirectory=/home/pi/vradio_node
+ExecStart=/home/pi/vradio_node/bin/www
+Restart=always
+RestartSec=10
+SyslogIdentifier=vradio-node
+ExecReload=/bin/kill -HUP $MAINPID
+Environment=PORT=80
+
+[Install]
+WantedBy=multi-user.target

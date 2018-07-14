@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  ol
+    each s in stations
+      li(key=s.Key): a(href= s.Item.StationUrl)= s.Item.StationName   
+  hr
+  ul 
+    li: a(href= '/setupapp/yamaha/asp/browsexml/FavXML.asp') /setupapp/yamaha/asp/browsexml/FavXML.asp
+    li: a(href= '/setupapp/yamaha/asp/browsexml/loginXML.asp') /setupapp/yamaha/asp/browsexml/loginXML.asp
+    li: a(href= '/setupapp/yamaha/asp/browsexml/loginXML.asp?token=0') /setupapp/yamaha/asp/browsexml/loginXML.asp?token=0
