@@ -18,7 +18,7 @@ Restart=always
 RestartSec=10
 SyslogIdentifier=vradio-node
 ExecReload=/bin/kill -HUP $MAINPID
-Environment=PORT=80
+Environment=PORT=80 FIREBASE_URL=https://<your>.firebaseio.com FIREBASE_PRIVATE_KEY=<path-to-firebase-private-key>
 
 [Install]
 WantedBy=multi-user.target
