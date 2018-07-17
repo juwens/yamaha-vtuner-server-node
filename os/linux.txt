@@ -1,1 +1,12 @@
+# allow node to bind to privileged port 80
 setcap 'cap_net_bind_service=+ep' /usr/bin/node
+
+# install and configure dns-proxy
+apt-get install dnsmasq 
+cat > /etc/dnsmasq.d/vradio.conf << EOF  
+server=8.8.8.8
+server=8.8.4.4
+
+address=/radioyamaha.vtuner.com/192.168.x.y
+address=/radioyamaha2.vtuner.com/192.168.x.y
+EOF
