@@ -1,6 +1,6 @@
 const config = {
-    fbUrl: new URL(process.env.FIREBASE_URL),
-    fbSecret: process.env.FIREBASE_SECRET
+    fbDatabaseUrl: process.env.FIREBASE_URL,
+    fbPrivateKey: process.env.FIREBASE_PRIVATE_KEY
 }
 
 module.exports = config
